@@ -1,0 +1,23 @@
+{
+  "name": "boss-bot",
+  "version": "0.0.0",
+  "description": "Library for creating a generic Discord bot.",
+  "main": "lib/bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "Xenoveritas",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.2.1",
+    "erlpack": "github:discordapp/erlpack"
+  },
+  "optionalDependencies": {
+    "heapdump": "^0.3.9",
+    "terminal-kit": "^1.14.1"
+  }
+}

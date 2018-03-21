@@ -1,0 +1,8 @@
+{
+  "client": {
+    "id": "The bot's ID (get from https://discordapp.com/developers/applications/me#top)"
+  },
+  "user": {
+    "token": "The bot's user token (get from https://discordapp.com/developers/applications/me#top)"
+  }
+}
