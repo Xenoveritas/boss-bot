@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Library for creating a generic Discord bot.",
   "main": "lib/bot.js",
+  "repository": "github:Xenoveritas/boss-bot",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
