@@ -16,9 +16,17 @@ function createSnowfake() {
   return ((now << 23) | (snowfakeIncrement++)).toString();
 }
 
+class MockUser {
+  constructor() {
+    this.id = createSnowfake();
+    this.bot = false;
+  }
+}
+
 class MockChannel {
   constructor() {
     this.id = createSnowfake();
+    this.type = 'text';
   }
 
   send(content, options) {
@@ -28,9 +36,10 @@ class MockChannel {
 }
 
 class MockMessage {
-  constructor(content, channel) {
+  constructor(content, channel, user) {
     this.id = createSnowfake();
     this.content = content;
+    this.author = user ? user : new MockUser();
     this.channel = channel ? channel : new MockChannel();
   }
 
@@ -46,5 +55,6 @@ module.exports = {
   createSnowfake: createSnowfake,
   createSnowflake: function() { console.log("Stop hating fun (snowfake is a joke, not a typo)"); return createSnowfake(); },
   MockChannel: MockChannel,
-  MockMessage: MockMessage
+  MockMessage: MockMessage,
+  MockUser: MockUser
 };

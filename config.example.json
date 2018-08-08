@@ -4,5 +4,6 @@
   },
   "user": {
     "token": "The bot's user token (get from https://discordapp.com/developers/applications/me#top)"
-  }
+  },
+  "globalCooldown": 2000
 }
