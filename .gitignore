@@ -4,3 +4,11 @@
 
 # Ignore yarn log.
 yarn-error.log
+
+# Generated documentation. This may move eventually.
+/out
+
+# Various OS-specific cruft
+thumbs.db
+.DS_Store
+*~

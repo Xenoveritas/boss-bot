@@ -5,6 +5,7 @@
   "main": "lib/bot.js",
   "repository": "github:Xenoveritas/boss-bot",
   "scripts": {
+    "doc": "jsdoc -c doc/jsdoc_config.js",
     "test": "mocha"
   },
   "keywords": [
@@ -22,6 +23,7 @@
     "terminal-kit": "^1.14.1"
   },
   "devDependencies": {
+    "jsdoc": "^3.5.5",
     "mocha": "^5.0.5",
     "promise-mock": "^2.1.0",
     "sinon": "^6.1.4"
