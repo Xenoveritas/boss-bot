@@ -148,5 +148,54 @@ describe('Commands', function() {
       // This isn't implemented yet
       it("should not handle a second request made too soon after another");
     });
+
+    describe('_handleResult', function() {
+      let channel, command;
+      beforeEach(function() {
+        channel = { send: sinon.spy() };
+        command = new Command("test");
+      });
+
+      it("should accept a string", function() {
+        command._handleResult("String", channel, null);
+        assert(channel.send.calledOnceWith("String"))
+      });
+
+      it("should accept an array of strings", function() {
+        let message = [ 'Test', 'Array' ];
+        command._handleResult(message, channel, null);
+        assert(channel.send.calledOnceWith(message));
+      });
+
+      it("should accept an object", function() {
+        let message = { content: "Test string", embed: { title: "Test embed" } };
+        command._handleResult(message, channel, null);
+        assert(channel.send.calledOnceWith("Test string", message.embed));
+      });
+
+      describe("with an existing message", function() {
+        let loadingMessage;
+        beforeEach(function() {
+          loadingMessage = { edit: sinon.spy() };
+        });
+
+        it("should accept a string", function() {
+          command._handleResult("String", channel, loadingMessage);
+          assert(loadingMessage.edit.calledOnceWith("String"))
+        });
+
+        it("should accept an array of strings", function() {
+          let message = [ 'Test', 'Array' ];
+          command._handleResult(message, channel, loadingMessage);
+          assert(loadingMessage.edit.calledOnceWith(message));
+        });
+
+        it("should accept an object", function() {
+          let message = { content: "Test string", embed: { title: "Test embed" } };
+          command._handleResult(message, channel, loadingMessage);
+          assert(loadingMessage.edit.calledOnceWith("Test string", message.embed));
+        });
+      });
+    });
   });
 });
