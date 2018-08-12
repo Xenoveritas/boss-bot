@@ -3,7 +3,7 @@
 
 module.exports = {
   source: {
-    include: [ 'lib' ]
+    include: [ 'lib', 'lib/cli' ]
   },
   plugins: ['plugins/markdown']
 };
