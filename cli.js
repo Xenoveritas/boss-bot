@@ -10,4 +10,12 @@
 
 const Bot = require('./lib/bot');
 
-new Bot().startCLI();
+// Create bot with some default parameters (note that it's missing the
+// configuration required to actually connect to the server).
+let bot = new Bot({
+  prefix: "bot"
+});
+
+bot.addBasicCommands();
+bot.addSampleCommands();
+bot.startCLI();
