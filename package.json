@@ -26,7 +26,7 @@
     "jsdoc": "^3.5.5",
     "mocha": "^5.0.5",
     "promise-mock": "^2.1.0",
-    "rewiremock": "^3.7.7",
+    "rewiremock": "^3.12.3",
     "sinon": "^7.1.1"
   }
 }
