@@ -1,9 +1,11 @@
 {
-  "client": {
-    "id": "The bot's ID (get from https://discordapp.com/developers/applications/me#top)"
-  },
   "user": {
-    "token": "The bot's user token (get from https://discordapp.com/developers/applications/me#top)"
+    "token": "The bot's user token (get from https://discordapp.com/developers/applications/)",
+    "permissions": [
+      "VIEW_CHANNEL",
+      "SEND_MESSAGE",
+      "ADD_REACTIONS"
+    ]
   },
   "globalCooldown": 2000
 }
