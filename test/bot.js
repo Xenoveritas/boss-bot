@@ -9,6 +9,9 @@ describe('Bot', () => {
   describe('constructor', () => {
     it('should create a blank bot with no arguments', () => {
       let bot = new Bot();
+      // Bunch of asserts to ensure defaults got set probably correctly
+      assert.ok(bot._prefixMatcher);
+      assert.ok(bot._prefix);
     });
   });
 
